@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#15122B">
+
+    <!-- Bottom Navigation Bar (Matching Home/Friends XML) -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#120E2B"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/building"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Active Tab: Friends -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/people"
+                android:tint="#7B32F1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Friends"
+                android:textColor="#7B32F1"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/plus"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/diamond"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discover"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/settings"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Main Content Scrollable Area -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Top App Bar -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Friends"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <!-- Custom Segmented Tab Bar (Requests Active) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardBackgroundColor="#221F3A"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <!-- Inactive Tab: My Friends -->
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="My Friends"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+
+                        <!-- Active Tab: Requests -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="#7B32F1"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Requests"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <!-- Notification Badge -->
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_marginStart="6dp"
+                                    app:cardBackgroundColor="#E53935"
+                                    app:cardCornerRadius="9dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="2"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Section: Friend Requests -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:text="Pending Requests (2)"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- Request Item 1 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/reqAvatar1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="4dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@android:drawable/sym_def_app_icon" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@id/reqAvatar1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ItayGame"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="Wants to be your friend"
+                        android:textColor="#A0A0A0"
+                        android:textSize="12sp" />
+
+                    <!-- Action Buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#009A3E"
+                            android:drawableStart="@android:drawable/checkbox_on_background"
+                            android:drawablePadding="4dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:text="Accept"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            app:cornerRadius="8dp" />
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#A62C2B"
+                            android:drawableStart="@android:drawable/ic_delete"
+                            android:drawablePadding="4dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:text="Decline"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            app:cornerRadius="8dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Request Item 2 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/reqAvatar2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="4dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@android:drawable/sym_def_app_icon" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@id/reqAvatar2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MayaMovies"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="Wants to be your friend"
+                        android:textColor="#A0A0A0"
+                        android:textSize="12sp" />
+
+                    <!-- Action Buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#009A3E"
+                            android:drawableStart="@android:drawable/checkbox_on_background"
+                            android:drawablePadding="4dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:text="Accept"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            app:cornerRadius="8dp" />
+
+                        <Button
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#A62C2B"
+                            android:drawableStart="@android:drawable/ic_delete"
+                            android:drawablePadding="4dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:text="Decline"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            app:cornerRadius="8dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#15122B">
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#120E2B"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/building"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/people"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Friends"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Active Tab: Add -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/plus"
+                android:tint="#7B32F1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:textColor="#7B32F1"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/diamond"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discover"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/settings"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Main Content Area -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top Header Bar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Add Movie"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <!-- Search Input Box -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#231F41"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_menu_search"
+                    app:tint="#8A8A8A" />
+
+                <EditText
+                    android:id="@+id/searchMovieEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:background="@null"
+                    android:hint="Search for a movie..."
+                    android:textColor="@android:color/white"
+                    android:textColorHint="#8A8A8A"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Scrollable Search Results -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Search Result 1: Inception -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/movieResult1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="#231F41"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/poster1"
+                            android:layout_width="56dp"
+                            android:layout_height="72dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#333344"
+                                android:scaleType="centerCrop" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_toEndOf="@id/poster1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Inception"
+                                android:textColor="@android:color/white"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="2010 • Action, Sci-Fi"
+                                android:textColor="#A0A0A0"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:drawableStart="@android:drawable/btn_star"
+                                android:drawablePadding="4dp"
+                                android:text="8.8/10"
+                                android:textColor="#FFC107"
+                                android:textSize="12sp"
+                                app:drawableTint="#FFC107" />
+                        </LinearLayout>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:backgroundTint="#7B32F1"
+                            android:minWidth="0dp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:text="Select"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            app:cornerRadius="8dp" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Search Result 2: Interstellar -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/movieResult2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="#231F41"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/poster2"
+                            android:layout_width="56dp"
+                            android:layout_height="72dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#333344"
+                                android:scaleType="centerCrop" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_toEndOf="@id/poster2"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Interstellar"
+                                android:textColor="@android:color/white"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="2014 • Adventure, Drama, Sci-Fi"
+                                android:textColor="#A0A0A0"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:drawableStart="@android:drawable/btn_star"
+                                android:drawablePadding="4dp"
+                                android:text="8.7/10"
+                                android:textColor="#FFC107"
+                                android:textSize="12sp"
+                                app:drawableTint="#FFC107" />
+                        </LinearLayout>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:backgroundTint="#7B32F1"
+                            android:minWidth="0dp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:text="Select"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            app:cornerRadius="8dp" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Search Result 3: The Dark Knight -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/movieResult3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="#231F41"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/poster3"
+                            android:layout_width="56dp"
+                            android:layout_height="72dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#333344"
+                                android:scaleType="centerCrop" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp"
+                            android:layout_toEndOf="@id/poster3"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="The Dark Knight"
+                                android:textColor="@android:color/white"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="2008 • Action, Crime, Drama"
+                                android:textColor="#A0A0A0"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:drawableStart="@android:drawable/btn_star"
+                                android:drawablePadding="4dp"
+                                android:text="9.0/10"
+                                android:textColor="#FFC107"
+                                android:textSize="12sp"
+                                app:drawableTint="#FFC107" />
+                        </LinearLayout>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:backgroundTint="#7B32F1"
+                            android:minWidth="0dp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:text="Select"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp"
+                            app:cornerRadius="8dp" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>

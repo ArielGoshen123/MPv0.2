@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#120E2B"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="48dp"
+        android:src="@android:drawable/ic_media_play"
+        android:tint="#7B32F1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="MovieTogether"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Plan. Watch. Together."
+        android:textColor="#A0A0A0"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="48dp"
+        android:background="#231F41"
+        android:drawableStart="@drawable/at_email"
+        android:drawablePadding="16dp"
+        android:hint="Username"
+        android:padding="16dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="#8A8A8A" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="#231F41"
+        android:drawableStart="@drawable/admin"
+        android:drawablePadding="16dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="#8A8A8A" />
+
+    <CheckBox
+        android:id="@+id/rememberMeCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:buttonTint="#7B32F1"
+        android:text="Remember Me"
+        android:textColor="#A0A0A0"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#7B32F1"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>

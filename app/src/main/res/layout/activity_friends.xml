@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#15122B">
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#120E2B"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/building"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Active Tab: Friends -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/people"
+                android:tint="#7B32F1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Friends"
+                android:textColor="#7B32F1"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/plus"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/diamond"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discover"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/settings"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Main Content Scrollable Area -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Top App Bar -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Friends"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <!-- Custom Segmented Tab Bar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardBackgroundColor="#221F3A"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <!-- Active Tab: My Friends -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="#7B32F1"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="0dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="My Friends"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Inactive Tab: Requests -->
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Requests"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <!-- Notification Badge -->
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_marginStart="6dp"
+                                    app:cardBackgroundColor="#E53935"
+                                    app:cardCornerRadius="9dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="2"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Section: Friends -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"
+                android:text="Friends (3)"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- Friend Item 1 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <RelativeLayout
+                    android:id="@+id/avatarContainer1"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_centerInParent="true"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@android:drawable/sym_def_app_icon" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="#00C853" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@id/avatarContainer1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NoamGamer"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Online"
+                        android:textColor="#00C853"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <!-- Friend Item 2 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <RelativeLayout
+                    android:id="@+id/avatarContainer2"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_centerInParent="true"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@android:drawable/sym_def_app_icon" />
+                    </com.google.android.material.card.MaterialCardView>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@id/avatarContainer2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DanaPlayz"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Last seen 2h ago"
+                        android:textColor="#A0A0A0"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <!-- Friend Item 3 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <RelativeLayout
+                    android:id="@+id/avatarContainer3"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_centerInParent="true"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@android:drawable/sym_def_app_icon" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="#00C853" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_toEndOf="@id/avatarContainer3"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OriMinecraft"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Online"
+                        android:textColor="#00C853"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#15122B">
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#120E2B"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/building"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/people"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Friends"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Active Tab: Add -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/plus"
+                android:tint="#7B32F1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:textColor="#7B32F1"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/diamond"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discover"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/settings"
+                android:tint="#A0A0A0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textColor="#A0A0A0"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Scrollable Main Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Top Header Bar -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/backButton"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:src="@android:drawable/ic_menu_revert"
+                    app:tint="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Schedule Watch"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <!-- Selected Movie Detailed Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="#1F1B3D"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#2A2640"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <!-- Movie Poster Image -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="110dp"
+                        android:layout_height="150dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:id="@+id/moviePoster"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#333344"
+                            android:scaleType="centerCrop"
+                            android:src="@android:drawable/ic_menu_gallery" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Movie Info -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/movieTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Inception"
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/movieMeta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="2010 • 2h 28m"
+                            android:textColor="#A0A0A0"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/movieRating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:drawableStart="@android:drawable/btn_star"
+                            android:drawablePadding="4dp"
+                            android:text="8.8/10"
+                            android:textColor="#FFC107"
+                            android:textSize="13sp"
+                            app:drawableTint="#FFC107" />
+
+                        <TextView
+                            android:id="@+id/movieDescription"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:ellipsize="end"
+                            android:maxLines="3"
+                            android:text="A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea."
+                            android:textColor="#CCCCCC"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Date Picker Card -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Date to Watch"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/datePickerCard"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#231F41"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="16dp">
+
+                    <ImageView
+                        android:id="@+id/calendarIcon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/ic_menu_today"
+                        app:tint="#A0A0A0" />
+
+                    <TextView
+                        android:id="@+id/selectedDateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_toEndOf="@id/calendarIcon"
+                        android:text="06/11/2026"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/arrow_down_float"
+                        app:tint="#A0A0A0" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Time Picker Card -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Time to Watch"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/timePickerCard"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="#231F41"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="16dp">
+
+                    <ImageView
+                        android:id="@+id/clockIcon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/ic_menu_recent_history"
+                        app:tint="#A0A0A0" />
+
+                    <TextView
+                        android:id="@+id/selectedTimeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_toEndOf="@id/clockIcon"
+                        android:text="20:00 PM"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@android:drawable/arrow_down_float"
+                        app:tint="#A0A0A0" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Share with friends -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Tag Friends (optional)"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/addFriendsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginBottom="28dp"
+                android:backgroundTint="#231F41"
+                android:drawableStart="@android:drawable/ic_input_add"
+                android:drawablePadding="6dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minWidth="0dp"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:text="Add Friends"
+                android:textAllCaps="false"
+                android:textColor="#A0A0A0"
+                android:textSize="12sp"
+                app:cornerRadius="18dp"
+                app:drawableTint="#A0A0A0" />
+
+            <!-- Add to Watchlist Action Button -->
+            <Button
+                android:id="@+id/confirmAddButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:backgroundTint="#7B32F1"
+                android:text="Add to Watchlist"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
